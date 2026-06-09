@@ -6,7 +6,7 @@ from datetime import date, timedelta, datetime
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 os.makedirs(DATA_DIR, exist_ok=True)
-DB_PATH = os.path.join(DATA_DIR, "stocks.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "stocks.db")
 
 def get_connection():
     return sqlite3.connect(DB_PATH)
